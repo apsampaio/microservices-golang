@@ -10,7 +10,7 @@ type JSONPayload struct {
 	Data string `json:"data"`
 }
 
-func (app *Config) WirteLog(w http.ResponseWriter, r *http.Request) {
+func (app *Config) WriteLog(w http.ResponseWriter, r *http.Request) {
 	// read json into var
 
 	var resquestPayload JSONPayload
