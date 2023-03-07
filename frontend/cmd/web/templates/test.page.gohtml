@@ -20,6 +20,13 @@
       >
         Test Auth
       </a>
+      <a
+        href="javascript:void(0);"
+        id="loggerBtn"
+        class="btn btn-outline-secondary"
+      >
+        Test Log
+      </a>
 
       <div
         id="output"
@@ -55,9 +62,44 @@
 <script>
   let brokerBtn = document.querySelector("#brokerBtn");
   let authBrokerBtn = document.querySelector("#authBrokerBtn");
+  let loggerBtn = document.querySelector("#loggerBtn");
   let output = document.querySelector("#output");
   let payload = document.querySelector("#payload");
   let received = document.querySelector("#received");
+
+  loggerBtn.addEventListener("click", () => {
+    const payload = {
+      action: "log",
+      log: {
+        name: "event",
+        data: "test log data",
+      },
+    };
+
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
+
+    const body = {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers,
+    };
+
+    fetch("http:\/\/localhost:8080/handle", body)
+      .then((response) => response.json())
+      .then((data) => {
+        payload.innerHTML = JSON.stringify(payload, undefined, 4);
+        received.innerHTML = JSON.stringify(data, undefined, 4);
+        if (data.error) {
+          output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
+        } else {
+          output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
+        }
+      })
+      .catch((err) => {
+        output.innerHTML += "<br><br>Error: " + err;
+      });
+  });
 
   brokerBtn.addEventListener("click", () => {
     const body = {

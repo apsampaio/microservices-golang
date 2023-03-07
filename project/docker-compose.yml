@@ -1,5 +1,9 @@
 version: "3"
 
+networks:
+  net:
+    driver: bridge
+
 services:
   logger-service:
     container_name: logger
