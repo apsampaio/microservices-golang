@@ -1,6 +1,16 @@
 version: "3"
 
 services:
+  logger-service:
+    container_name: logger
+    build:
+      context: ./../logger-service
+      dockerfile: ./../logger-service/logger-service.dockerfile
+    restart: always
+    deploy:
+      mode: replicated
+      replicas: 1
+
   broker-service:
     container_name: broker
     build:
@@ -51,7 +61,8 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
     volumes:
-      - ./db-data/mongo/:/data/db
+      - mongo:/data/db
 
 volumes:
   postgres:
+  mongo:
