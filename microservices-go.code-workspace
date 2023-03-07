@@ -15,6 +15,9 @@
     {
       "name": "project",
       "path": "project"
+    },
+    {
+      "path": "logger-service"
     }
   ]
 }
