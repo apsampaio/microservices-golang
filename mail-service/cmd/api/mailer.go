@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"log"
 	"text/template"
 	"time"
 
@@ -10,14 +11,14 @@ import (
 )
 
 type Mail struct {
-	Domain     string
-	Host       string
-	Port       int
-	Username   string
-	Password   string
-	Encryption string
-	FromAddres string
-	FromName   string
+	Domain      string
+	Host        string
+	Port        int
+	Username    string
+	Password    string
+	Encryption  string
+	FromAddress string
+	FromName    string
 }
 
 type Message struct {
@@ -32,7 +33,7 @@ type Message struct {
 
 func (m *Mail) SendSMTPMessage(msg Message) error {
 	if msg.From == "" {
-		msg.From = m.FromAddres
+		msg.From = m.FromAddress
 	}
 
 	if msg.FromName == "" {
@@ -103,6 +104,7 @@ func (m *Mail) buildPlainTextMessage(msg Message) (string, error) {
 	t, err := template.New("email-plain").ParseFiles(templateToRender)
 
 	if err != nil {
+		log.Println(err)
 		return "", err
 	}
 
@@ -123,6 +125,7 @@ func (m *Mail) buildHTMLMessage(msg Message) (string, error) {
 	t, err := template.New("email-html").ParseFiles(templateToRender)
 
 	if err != nil {
+		log.Println(err)
 		return "", err
 	}
 
