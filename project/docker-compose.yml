@@ -1,9 +1,5 @@
 version: "3"
 
-networks:
-  net:
-    driver: bridge
-
 services:
   logger-service:
     container_name: logger
@@ -111,6 +107,7 @@ services:
       replicas: 1
     volumes:
       - rabbitmq:/var/lib/rabbitmq/
+
   portainer:
     image: portainer/portainer-ce:latest
     ports:
