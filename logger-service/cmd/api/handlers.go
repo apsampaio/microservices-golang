@@ -24,7 +24,7 @@ func (app *Config) WriteLog(w http.ResponseWriter, r *http.Request) {
 		Data: resquestPayload.Data,
 	}
 
-	err := app.Models.LogEntry.Inser(event)
+	err := app.Models.LogEntry.Insert(event)
 
 	if err != nil {
 		app.errorJSON(w, err)

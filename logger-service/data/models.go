@@ -33,7 +33,7 @@ func New(mongo *mongo.Client) Models {
 	}
 }
 
-func (l *LogEntry) Inser(entry LogEntry) error {
+func (l *LogEntry) Insert(entry LogEntry) error {
 	collection := client.Database("logs").Collection("logs")
 
 	_, err := collection.InsertOne(context.TODO(), LogEntry{

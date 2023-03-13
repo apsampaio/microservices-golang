@@ -62,6 +62,9 @@ func main() {
 	// Register the RPC Server
 	go app.rpcListen()
 
+	// Listen for gRPC connections
+	go app.gRPCListen()
+
 	// start web server
 
 	log.Println("Starting service on port", webPort)
