@@ -76,20 +76,20 @@
       headers,
     };
 
-    fetch("http:\/\/localhost:8080/handle", body)
-      .then((response) => response.json())
-      .then((data) => {
-        payload.innerHTML = JSON.stringify(payload, undefined, 4);
-        received.innerHTML = JSON.stringify(data, undefined, 4);
-        if (data.error) {
-          output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
-        } else {
-          output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
-        }
-      })
-      .catch((err) => {
-        output.innerHTML += "<br><br>Error: " + err;
-      });
+    fetch({{ print .BrokerURL "/handle"}}, body)
+    .then((response) => response.json())
+    .then((data) => {
+      payload.innerHTML = JSON.stringify(payload, undefined, 4);
+      received.innerHTML = JSON.stringify(data, undefined, 4);
+      if (data.error) {
+        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
+      } else {
+        output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
+      }
+    })
+    .catch((err) => {
+      output.innerHTML += "<br><br>Error: " + err;
+    });
   });
 
   loggerGBtn.addEventListener("click", () => {
@@ -110,20 +110,20 @@
       headers,
     };
 
-    fetch("http:\/\/localhost:8080/log-grpc", body)
-      .then((response) => response.json())
-      .then((data) => {
-        payload.innerHTML = JSON.stringify(payload, undefined, 4);
-        received.innerHTML = JSON.stringify(data, undefined, 4);
-        if (data.error) {
-          output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
-        } else {
-          output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
-        }
-      })
-      .catch((err) => {
-        output.innerHTML += "<br><br>Error: " + err;
-      });
+    fetch({{ print .BrokerURL "/log-grpc"}}, body)
+    .then((response) => response.json())
+    .then((data) => {
+      payload.innerHTML = JSON.stringify(payload, undefined, 4);
+      received.innerHTML = JSON.stringify(data, undefined, 4);
+      if (data.error) {
+        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
+      } else {
+        output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
+      }
+    })
+    .catch((err) => {
+      output.innerHTML += "<br><br>Error: " + err;
+    });
   });
 
   loggerBtn.addEventListener("click", () => {
@@ -144,20 +144,20 @@
       headers,
     };
 
-    fetch("http:\/\/localhost:8080/handle", body)
-      .then((response) => response.json())
-      .then((data) => {
-        payload.innerHTML = JSON.stringify(payload, undefined, 4);
-        received.innerHTML = JSON.stringify(data, undefined, 4);
-        if (data.error) {
-          output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
-        } else {
-          output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
-        }
-      })
-      .catch((err) => {
-        output.innerHTML += "<br><br>Error: " + err;
-      });
+    fetch({{ print .BrokerURL "/handle"}}, body)
+    .then((response) => response.json())
+    .then((data) => {
+      payload.innerHTML = JSON.stringify(payload, undefined, 4);
+      received.innerHTML = JSON.stringify(data, undefined, 4);
+      if (data.error) {
+        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
+      } else {
+        output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
+      }
+    })
+    .catch((err) => {
+      output.innerHTML += "<br><br>Error: " + err;
+    });
   });
 
   brokerBtn.addEventListener("click", () => {
@@ -165,20 +165,20 @@
       method: "GET",
     };
 
-    fetch("http:\/\/localhost:8080", body)
-      .then((response) => response.json())
-      .then((data) => {
-        payload.innerHTML = "empty get response";
-        received.innerHTML = JSON.stringify(data, undefined, 4);
-        if (data.error) {
-          console.error(data.message);
-        } else {
-          output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
-        }
-      })
-      .catch((err) => {
-        output.innerHTML += "<br><br>Error: " + err;
-      });
+    fetch({{ print .BrokerURL }}, body)
+    .then((response) => response.json())
+    .then((data) => {
+      payload.innerHTML = "empty get response";
+      received.innerHTML = JSON.stringify(data, undefined, 4);
+      if (data.error) {
+        console.error(data.message);
+      } else {
+        output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
+      }
+    })
+    .catch((err) => {
+      output.innerHTML += "<br><br>Error: " + err;
+    });
   });
 
   authBrokerBtn.addEventListener("click", () => {
@@ -199,20 +199,20 @@
       headers,
     };
 
-    fetch("http:\/\/localhost:8080/handle", body)
-      .then((response) => response.json())
-      .then((data) => {
-        payload.innerHTML = JSON.stringify(payload, undefined, 4);
-        received.innerHTML = JSON.stringify(data, undefined, 4);
-        if (data.error) {
-          output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
-        } else {
-          output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
-        }
-      })
-      .catch((err) => {
-        output.innerHTML += "<br><br>Error: " + err;
-      });
+    fetch({{ print .BrokerURL "/handle"}}, body)
+    .then((response) => response.json())
+    .then((data) => {
+      payload.innerHTML = JSON.stringify(payload, undefined, 4);
+      received.innerHTML = JSON.stringify(data, undefined, 4);
+      if (data.error) {
+        output.innerHTML += `<br><strong>Error:</strong> ${data.message}`;
+      } else {
+        output.innerHTML += `<br><strong>Response from Broker Service </strong>: ${data.message}</br>`;
+      }
+    })
+    .catch((err) => {
+      output.innerHTML += "<br><br>Error: " + err;
+    });
   });
 </script>
 {{ end }}
