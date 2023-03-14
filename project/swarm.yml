@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  caddy:
+    image: apsampaio/micro-caddy:1.0.0
+    deploy:
+      mode: replicated
+      replicas: 1
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
   front-end:
     image: apsampaio/front-end:1.0.0
     deploy:
@@ -92,3 +103,8 @@ services:
       - "5672:5672"
     deploy:
       mode: global
+  
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
