@@ -1,4 +1,4 @@
-## ✨ Using Docker Swarm
+## Docker Swarm
 
 1. Build your microservice image using docker:
    `docker build -f logger-service.dockerfile -t apsampaio/logger-service:1.0.0`
@@ -31,3 +31,42 @@
 1. Run `docker service scale myapp_listener-service=0`. This will disable the listener service.
 2. In case you want to stop the entire swarm, run `docker stack rm myapp`
 3. To leave the swarm run `docker swarm leave --force`
+
+## Kubernetes with Minikube
+
+### 🐧 Minikube Installation WSL2
+
+1. Download the latest version of Minikube:
+   `curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
+2. Make the binary executable:
+   `chmod +x ./minikube`
+3. Move the binary to your executable path:
+   `sudo mv ./minikube /usr/local/bin/`
+
+### 🧊 Kubectl Installation WSL2
+
+1. Download the latest version of Kubectl:
+   `curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl`
+2. Make the binary executable:
+   `chmod +x ./kubectl`
+3. Move the binary to your executable path:
+   `sudo mv ./kubectl /usr/local/bin/kubectl`
+4. Create the config file
+   `mkdir -p ~/.kube`
+   `ln -sf "/mnt/c/Users/<user>/.kube/config" ~/.kube/config`
+
+### ✍ Minikube commands
+
+- Starting with docker driver:
+  `minikube start --driver=docker`
+- Verify if the node was created:
+  `kubectl get nodes`
+- View running pods:
+  `kubectl get pods -A`
+- Open kubernetes dashboard:
+  `minikube dashboard`
+- Deploy a specific service with `kubectl apply -f k8s/rabbit.yml` or a complete folder with `kubectl apply -f k8s`
+- View services running:
+  `kubectl get svc`
+- View services deployments:
+  `kubectl get deployments`

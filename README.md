@@ -6,6 +6,7 @@
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&color=555555)
 ![RabbitMQ](https://img.shields.io/badge/-RabbitMQ-FF6600?style=flat&logo=rabbitmq&color=555555)
 ![Portainer](https://img.shields.io/badge/-Portainer-FF6600?style=flat&logo=portainer&color=555555)
+![Kubernetes](https://img.shields.io/badge/-Kubernetes-FF6600?style=flat&logo=kubernetes&color=555555)
 
 <h1 align="center">
     <img src=".github/build.png" alt="Build" width="200px" />
