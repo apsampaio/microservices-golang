@@ -9,7 +9,7 @@
 ![Kubernetes](https://img.shields.io/badge/-Kubernetes-FF6600?style=flat&logo=kubernetes&color=555555)
 
 <h1 align="center">
-    <img src=".github/map.png" alt="Build" width="400px" />
+    <img src=".github/services.png" alt="Build" width="400px" />
 </h1>
 
 > This repo is my source code from the ![Udemy](https://img.shields.io/badge/-Working%20with%20Microservices%20in%20Go-white?style=flat&logo=udemy&color=A435F0&logoColor=white) course by [Trevor Sawler](https://github.com/tsawler)
