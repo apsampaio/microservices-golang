@@ -79,3 +79,12 @@
   `kubectl expose deployment <service-name> --type=LoadBalancer --port=<port> --target-port=<port>`
 - Create the tunnel:
   `minikube tunnel`
+
+### 🏮 nginx ingress
+
+- Add the Nginx ingress with:
+  `minikube addons enable ingress`
+- Define the deployment file to ingress:
+  `kubectl apply -f ingress.yml`
+- Start the tunnel:
+  `minikube tunnel`
