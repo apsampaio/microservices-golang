@@ -70,3 +70,12 @@
   `kubectl get svc`
 - View services deployments:
   `kubectl get deployments`
+
+### ⚖ LoadBalancer
+
+- If the service is running, remove it with:
+  `kubectl delete svc <service-name>`
+- Run:
+  `kubectl expose deployment <service-name> --type=LoadBalancer --port=<port> --target-port=<port>`
+- Create the tunnel:
+  `minikube tunnel`
