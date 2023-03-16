@@ -1,5 +1,9 @@
 ## Docker Swarm
 
+<h1 align="center">
+    <img src="https://github.com/apsampaio/microservices-golang/blob/main/.github/docker.png" alt="Build" width="200px" />
+</h1>
+
 1. Build your microservice image using docker:
    `docker build -f logger-service.dockerfile -t apsampaio/logger-service:1.0.0`
 2. Push the image to a hub, example dockerhub:
@@ -33,6 +37,10 @@
 3. To leave the swarm run `docker swarm leave --force`
 
 ## Kubernetes with Minikube
+
+<h1 align="center">
+    <img src="https://github.com/apsampaio/microservices-golang/blob/main/.github/minikube.png" alt="Build" width="200px" />
+</h1>
 
 ### 🐧 Minikube Installation WSL2
 

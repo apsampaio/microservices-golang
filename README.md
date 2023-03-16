@@ -42,11 +42,11 @@ starts the following services:
 3. [x] Building an Authentication Service
 4. [x] Building a Logger Service
 5. [x] Building a Mail Service
-6. [ ] Building a Listener service: AMQP with RabbitMQ
-7. [ ] Communicating between services using Remote Procedure Calls (RPC)
-8. [ ] Speeding things up(potentialy) with gRPC
-9. [ ] Deploying our Distributed App using Docker Swarm
-10. [ ] Deploying our Distributed App to Kubernetes
+6. [x] Building a Listener service: AMQP with RabbitMQ
+7. [x] Communicating between services using Remote Procedure Calls (RPC)
+8. [x] Speeding things up(potentialy) with gRPC
+9. [x] Deploying our Distributed App using Docker Swarm
+10. [x] Deploying our Distributed App to Kubernetes
 11. [ ] Testing Microservices
 12. [ ] Final Thoughts
 
