@@ -47,8 +47,8 @@ starts the following services:
 8. [x] Speeding things up(potentialy) with gRPC
 9. [x] Deploying our Distributed App using Docker Swarm
 10. [x] Deploying our Distributed App to Kubernetes
-11. [ ] Testing Microservices
-12. [ ] Final Thoughts
+11. [x] Testing Microservices
+12. [x] Final Thoughts
 
 ## ☕ Using the project
 
